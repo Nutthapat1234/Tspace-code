@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h style="font-size: 100px;">Color Game</h>
+  <Box/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Box from './components/Box.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Box
   }
 }
 </script>
@@ -21,6 +21,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
+}
+
+html{
+  background: #21B6A8;
 }
 </style>

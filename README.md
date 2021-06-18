@@ -1,24 +1,17 @@
 # tspace
 
+# Tspace-code
+This is code for junior dev test of Tspace digital company
+
 ## Project setup
+
+run following command in teminal/command prompt 
+
 ```
+cd path/to/this/directory
+npm install -g serve
 npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
 npm run build
+serve -s dist
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+then open browser at http://localhost:5000
