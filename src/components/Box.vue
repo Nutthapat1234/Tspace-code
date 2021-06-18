@@ -77,7 +77,7 @@ export default {
         this.pre_result =
           `Player select ${this.rules[index]};  ` +
           `System select ${this.rules[rand_color]};  `;
-        this.result = `System win`;
+        this.result = `Player lose`;
       } else if (rand_color == lose_index) {
         this.pre_result =
           `Player select ${this.rules[index]};  ` +
