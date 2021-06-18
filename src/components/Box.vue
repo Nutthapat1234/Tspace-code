@@ -23,7 +23,7 @@
   </div>
   <div>
     <p>
-      {{ pre_result }} <b>{{ result }}</b>
+      {{ pre_result }}    <b style="font-size: 30px;">{{ result }}</b>
     </p>
     <button id="comparebutton" v-on:click="compare()">Compare</button>
   </div>
@@ -48,13 +48,19 @@ export default {
         document.getElementsByTagName("button")[i].style.border =
           this.default_color[i];
       }
-      e.currentTarget.style.border = "5px solid black";
-      this.select_color = e.currentTarget.style.background;
+      if (e.currentTarget.style.border.localeCompare(this.select_color) == 0){
+          this.select_color = null;
+      }
+      else{
+          e.currentTarget.style.border = "5px solid black";
+          this.select_color = e.currentTarget.style.background;
+      }
     },
 
     compare() {
       // compare color
       if (this.select_color === null) {
+        this.pre_result = "";
         this.result = "Select color First";
         return;
       }
@@ -65,22 +71,22 @@ export default {
       let lose_index = index - 1;
 
       if (win_index == 4) win_index = 0;
-      else if (lose_index - 1 < 0) lose_index = 3;
+      else if (lose_index < 0) lose_index = 3;
       // game condition
       if (rand_color == win_index) {
         this.pre_result =
-          `Player select ${this.rules[index]}  ` +
-          `System select ${this.rules[rand_color]}  `;
+          `Player select ${this.rules[index]};  ` +
+          `System select ${this.rules[rand_color]};  `;
         this.result = `System win`;
       } else if (rand_color == lose_index) {
         this.pre_result =
-          `Player select ${this.rules[index]}  ` +
-          `System select ${this.rules[rand_color]}  `;
+          `Player select ${this.rules[index]};  ` +
+          `System select ${this.rules[rand_color]};  `;
         this.result = `Player win`;
       } else {
-        this.pre_result =
-          `Player select ${this.rules[index]}  ` +
-          `System select ${this.rules[rand_color]}  `;
+        this.pre_result = 
+          `Player select ${this.rules[index]};  ` +
+          `System select ${this.rules[rand_color]};  `;
         this.result = "Draw";
       }
     },
